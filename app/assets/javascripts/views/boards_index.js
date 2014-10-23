@@ -1,8 +1,12 @@
 TrelloClone.Views.BoardsIndex = Backbone.View.extend({
+  initialize: function (options) {
+    this.boards = options.boards;
+  },
+
   render: function () {
     var $ul = $("<ul>");
 
-    TrelloClone.Collections.Boards.each(function (board) {
+    this.boards.each(function (board) {
       var $li = $("<li>");
 
       $li.text(board.get("title"));

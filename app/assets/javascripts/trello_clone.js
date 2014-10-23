@@ -6,8 +6,15 @@ window.TrelloClone = {
   Views: {},
 
   initialize: function () {
-    var view = new TrelloClone.Views.BoardsIndex();
-    view.render();
+    var view = new TrelloClone.Views.BoardsIndex({
+      boards: TrelloClone.Collections.boards
+    });
+
+    TrelloClone.Collections.boards.fetch({
+      success: function () {
+        $("body").append(view.render().$el);
+      }
+    });
   }
 
 };

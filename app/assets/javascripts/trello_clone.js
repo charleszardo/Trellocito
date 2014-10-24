@@ -6,13 +6,9 @@ window.TrelloClone = {
   Views: {},
 
   initialize: function () {
-    var view = new TrelloClone.Views.BoardsIndex({
-      collection: TrelloClone.Collections.boards
-    });
+    new TrelloClone.Routers.AppRouter();
 
-    TrelloClone.Collections.boards.fetch();
-    $("body").append(view.render().$el);
-
+    Backbone.history.start();
   }
 
 };

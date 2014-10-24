@@ -1,5 +1,13 @@
+<h2>Boards</h2>
+
 <ul>
   <% boards.each(function (board) { %>
-    <li><%= board.get("title") %></li>
+    <!-- Still using get! -->
+    <li>
+      <a href="#/boards/<%= board.get("id") %>">
+      <%= board.get("title") %>
+    </li>
   <% }) %>
 </ul>
+
+<a href="#/boards/new">New Board</a>

@@ -7,16 +7,12 @@ window.TrelloClone = {
 
   initialize: function () {
     var view = new TrelloClone.Views.BoardsIndex({
-      boards: TrelloClone.Collections.boards
+      collection: TrelloClone.Collections.boards
     });
 
-    TrelloClone.Collections.boards.fetch({
-      success: function () {
-        $("body").append(view.render().$el);
-      }
-    });
+    TrelloClone.Collections.boards.fetch();
+    $("body").append(view.render().$el);
+
   }
 
 };
-
-$(TrelloClone.initialize);

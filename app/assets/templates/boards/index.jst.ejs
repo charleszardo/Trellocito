@@ -5,7 +5,7 @@
     <!-- Still using get! -->
     <li>
       <a href="#/boards/<%= board.get("id") %>">
-      <%= board.get("title") %>
+      <%= board.escape("title") %>
     </li>
   <% }) %>
 </ul>

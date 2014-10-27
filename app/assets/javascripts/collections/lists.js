@@ -19,7 +19,7 @@ TrelloClone.Collections.Lists = Backbone.Collection.extend({
       list.fetch({
         success: function () {
           lists.add(list)
-        };
+        }
       });
     } else {
       list.fetch();

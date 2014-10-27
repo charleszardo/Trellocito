@@ -3,32 +3,20 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
   url: 'api/boards',
 
   getOrFetch: function (id) {
-    var model;
-    var boards = this;
+    var board = this.get(id), boards = this;
 
-    if (model = this.get(id)) {
-      return model;
-    } else {
-      model = new TrelloClone.Models.Board({ id: id });
-      model.fetch({
-        success: function () { boards.add(board) }
+    if (!board) {
+      board = new TrelloClone.Models.Board({ id: id})
+      board.fetch({
+        success: function () {
+          boards.add(board)
+        };
       });
-      return model;
+    } else {
+      board.fetch();
     }
-    // var board = this.get(id);
-    //
-    // if(!board) {
-    //   board = new TrelloClone.Models.Board({ id: id});
-    //   board.fetch({
-    //     success: function () {
-    //       this.add(board);
-    //     }.bind(this)
-    //   });
-    // } else {
-    //   board.fetch();
-    // }
-    //
-    // return board;
+
+    return board;
   }
 });
 

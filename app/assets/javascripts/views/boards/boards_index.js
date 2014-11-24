@@ -1,25 +1,11 @@
 TrelloClone.Views.BoardsIndex = Backbone.View.extend({
-  template: JST["boards/index"],
+  template: JST['boards/index'],
 
-  // events: {
-  //   'click a[href="#/boards/new"]': "goToFormPage"
-  // },
-  //
-  // goToFormPage: function () {
-  //   var view = new TrelloClone.Views.BoardsNew();
-  //   $('body').html(view.render().$el);
-  // },
+  className: 'boards-index',
 
-  initialize: function (options) {
-    this.listenTo(
-      this.collection,
-      "sync",
-      this.render
-    );
-  },
-
-  refresh: function () {
-    this.collection.fetch();
+  initialize: function () {
+    this.listenTo(this.collection, 'sync', this.render);
+    $('body').css('background-color', 'rgb(255, 255, 255)')
   },
 
   render: function () {
@@ -28,7 +14,6 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
     });
 
     this.$el.html(content);
-
     return this;
   }
 });

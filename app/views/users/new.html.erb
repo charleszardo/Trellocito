@@ -1,3 +1,4 @@
+<div class="signin">
 <h1>Sign Up</h1>
 
 <form action="/users" method="post">
@@ -10,3 +11,16 @@
   </label><br>
   <input type="submit" value="Submit" class="btn btn-primary"><br>
 </form>
+
+or
+
+ <form id="sign-in" action="/session" method="post">
+ <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	    
+ <input type="hidden" name="user[email]" value='demo@example.com' placeholder="email" class='email-login'>
+      
+      <input type="hidden" name="user[password]" value="password" placeholder="password" class='password-login'>
+
+    	<input type="submit" value="Sign in as a Guest" class="btn btn-primary"><br>
+</form>
+</div>

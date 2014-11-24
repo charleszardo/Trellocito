@@ -1,14 +1,11 @@
 window.TrelloClone = {
   Models: {},
   Collections: {},
+  Views: {},
   Routers: {},
   Utils: {},
-  Views: {},
-
-  initialize: function () {
-    new TrelloClone.Routers.AppRouter();
-
+  initialize: function() {
+    new TrelloClone.Routers.Router
     Backbone.history.start();
   }
-
 };

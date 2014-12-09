@@ -5,16 +5,18 @@
 
 <form action="/session" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Email<br>
-    <input name="user[email]" type="text"><br>
-  </label><br>
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
+  <!-- <label>Email<br> -->
+    <input name="user[email]" type="text" placeholder="email" class="form-input"><br>
+  <!-- </label><br>
+  <label>Password<br> -->
+    <input name="user[password]" type="password" placeholder="password" class="form-input"><br>
+  <!-- </label><br> -->
   <input type="submit" value="Submit" class="btn btn-primary"><br>
 </form>
 
-or
+<p>or sign in with one of the folowing options:</p>
+
+
 
 <form id="sign-in" action="/session" method="post">
  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -23,9 +25,10 @@ or
       
       <input type="hidden" name="user[password]" value="password" placeholder="password" class='password-login'>
 
-    	<input type="submit" value="Sign in as a Guest" class="btn btn-primary"><br>
+    	<input type="submit" value="Guest Sign In" class="btn btn-primary"><br>
 </form>
-or sign in with the following
+
 <a href="/auth/facebook"><img src="/assets/facebook_32.png"></a>
 <a href="/auth/twitter"><img src="/assets/twitter_32.png"></a>
+
 </div>

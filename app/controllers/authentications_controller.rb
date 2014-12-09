@@ -14,7 +14,6 @@ class AuthenticationsController < ApplicationController
       redirect_to "/#"
     elsif current_user
       current_user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
-      # redirect_to root_url
       redirect_to "/#"
     else
       user = User.create_by_omniauth(omniauth)
@@ -22,7 +21,6 @@ class AuthenticationsController < ApplicationController
       
       sign_in!(user)
       redirect_to "/#"
-      # redirect_to root_url
     end
   end
 end

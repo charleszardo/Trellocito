@@ -16,7 +16,7 @@
 
 or
 
- <form id="sign-in" action="/session" method="post">
+<form id="sign-in" action="/session" method="post">
  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	    
  <input type="hidden" name="user[email]" value='demo@example.com' placeholder="email" class='email-login'>
@@ -25,4 +25,7 @@ or
 
     	<input type="submit" value="Sign in as a Guest" class="btn btn-primary"><br>
 </form>
+or sign in with the following
+<a href="/auth/facebook"><img src="/assets/facebook_32.png"></a>
+<a href="/auth/twitter"><img src="/assets/twitter_32.png"></a>
 </div>

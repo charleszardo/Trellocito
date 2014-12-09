@@ -33,6 +33,16 @@ class User < ActiveRecord::Base
     user = User.find_by_email(user_params[:email])
     user.try(:is_password?, user_params[:password]) ? user : nil
   end
+  
+  def self.create_by_omniauth(auth)
+    p 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    p auth
+    p 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    omniauth_id = auth['uid'] + auth['provider']
+    email = auth['info'].email || auth['info'].nickname
+    user = User.create!(email: email,
+                        password: omniauth_id)
+  end
 
   def password=(password)
     @password = password

@@ -1,34 +1,60 @@
+<div class="signin-background">
+<div class="filler"></div>
+<div class="signin-box group">
+
+<div class="social-signin">
+	
+	<form id="sign-in" action="/session" method="post" class="guest-login">
+	 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	    
+	 <input type="hidden" name="user[email]" value='demo@example.com' placeholder="email" class='email-login'>
+      
+	      <input type="hidden" name="user[password]" value="password" placeholder="password" class='password-login'>
+
+	    	<input type="submit" value="guest sign in" class="social"><br>
+	</form>
+	
+	<a href="/auth/facebook">
+	<div class="social group" id="facebook">
+		<div class="social-logo">
+			<img src="/assets/facebook_logo.png" id="facebook-logo">
+		</div>
+		<div class="social-words">
+			<p>facebook sign in</p>
+		</div>
+	</div>
+	</a>
+	
+	<a href="/auth/twitter">
+	<div class="social group" id="twitter">
+		<div class="social-logo">
+			<img src="/assets/twitter_logo.png" id="twitter-logo">
+		</div>
+		<div class="social-words">
+			<p>twitter sign in</p>
+		</div>
+	</div>
+	</a>
+</div>
+
+<div id="middle">
+	<p>OR</p>
+</div>
+
 <div class="signin">
-
-<h1>Sign In</h1>
-
+<h1>Sign in with</h1>
 
 <form action="/session" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <!-- <label>Email<br> -->
     <input name="user[email]" type="text" placeholder="email" class="form-input"><br>
-  <!-- </label><br>
-  <label>Password<br> -->
     <input name="user[password]" type="password" placeholder="password" class="form-input"><br>
-  <!-- </label><br> -->
   <input type="submit" value="Submit" class="btn btn-primary"><br>
 </form>
 
-<p>or sign in with one of the folowing options</p>
+<p>No account? <a href="/users/new"> Sign up </a></p>
 
 
 
-<form id="sign-in" action="/session" method="post">
- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	    
- <input type="hidden" name="user[email]" value='demo@example.com' placeholder="email" class='email-login'>
-      
-      <input type="hidden" name="user[password]" value="password" placeholder="password" class='password-login'>
-
-    	<input type="submit" value="Guest Sign In" class="btn btn-primary"><br>
-</form>
-
-<a href="/auth/facebook"><img src="/assets/facebook_32.png"></a>
-<a href="/auth/twitter"><img src="/assets/twitter_32.png"></a>
-
+</div>
+</div>
 </div>

@@ -32,11 +32,19 @@ body {
 	
 	width: 100%;
 	height: 100%;
-	background-image: image-url('kitchen.jpg');
+	
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#signin-background {
+	background-image: image-url('kitchen.jpg');
+}
+
+#signup-background {
+	background-image: image-url('books.jpg');
 }
 
 .filler {
@@ -48,7 +56,7 @@ body {
 .signin-box {
 	margin: auto;
 	border: 1px solid lightgrey;
-	background: white;
+	background-color:rgb(255, 255, 255);
 	padding: 20px;
 	width: 680px;
 }

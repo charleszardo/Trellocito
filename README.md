@@ -7,4 +7,4 @@ Implements intuitive drag and drop feature using jQuery UI's Sortable plugin.
 
 Overrides standard Backbone Model#parse methods to create complex Rails-side associations on the client.
 
-**[Live Demo](http://trellocito.charnuska.com)**
+**[Live Demo](https://trellocito.herokuapp.com/)**
